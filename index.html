@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nhìn là mất 10 nghìn</title>
+        <link href="css.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            @media screen and (max-width: 800px) {
+                img{
+                    max-width: 100%;
+                    height: auto;
+                    position: relative;
+                    top: 50%;
+                    left: 1%;
+                }
+                .copya
+                {
+                border: 3px solid purple;
+                background-color: rgb(255, 255, 255);
+                padding: 10px 20px 20px 20px;
+                margin: 0 auto;
+                margin-bottom: 1em;
+                }
+                body {
+                    margin: 0;
+                    background-color: purple;
+                    background-image: linear-gradient(#FD80A8, #FCCE42);
+                    padding: 40px 30px 50px 30px;
+                }
+                .tablink {
+                    background-color: #233;
+                    color: white;
+                    float: left;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 14px 16px;
+                    font-size: 2.5vw;
+                    width: 33.33%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="copya">
+            <div id="doimau">
+                <h1 class="header"> Hãy Thể Hiện Sự Giàu Có Của Bạn </h1>
+                <button class="tablink" onclick="openPage('div1', this, 'red') "id="defaultOpen">MoMo</button>
+                <button class="tablink" onclick="openPage('div2', this, '#f2f23e')">ViettelPay</button>
+                <button class="tablink" onclick="openPage('div3', this, '#49d304')">Chuyển Khoản</button>
+                <div id="div1" class="tabcontent">
+                    <h3>Momo Nè</h3>
+                    <img src="momo.jpg" alt="mã momo nè">
+                </div>
+                <div id="div2" class="tabcontent">
+                    <h3>Viettel Pay Nè</h3>
+                    <img src="viettelPay.jpg" alt="mã ViettelPay nè">
+                </div>
+                <div id="div3" class="tabcontent">
+                    <h3>Ngân Hàng Nam Á Nè</h3>
+                    <img src="bank.jpg" alt="Nam Á bank Nè">
+                </div>     
+            </div>
+            <script>
+                function openPage(pageName, elmnt, color) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablink");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].style.backgroundColor = "";
+                    }
+                    document.getElementById(pageName).style.display = "block";
+                    elmnt.style.backgroundColor = color;
+                    }
+                    document.getElementById("defaultOpen").click();
+            </script>
+    </body>
+</html>
